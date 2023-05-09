@@ -11,15 +11,16 @@ from sentencesplitter import split_sentences
 app = FastAPI()
 
 origins = [
-    "http://localhost",
+    'https://localhost',
+    'https://localhost:3000',
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=['*'],
+    allow_headers=['*'],
 )
 
 
@@ -27,6 +28,6 @@ class Sentences(BaseModel):
     sentences: list[str]
 
 
-@app.post("/sentence-split")
+@app.post('/sentence-split')
 def read_item(sentences: Sentences):
-    return {"sentences": split_sentences(sentences.sentences)}
+    return {'sentences': split_sentences(sentences.sentences)}
