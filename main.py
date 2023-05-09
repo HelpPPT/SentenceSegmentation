@@ -3,6 +3,8 @@ from pydantic import BaseModel
 
 from sentencesplitter import split_sentences
 
+# pip install fastapi[all]
+
 # start dev server with `uvicorn main:app --reload`
 # start prod server with `uvicorn main:app`
 app = FastAPI()
