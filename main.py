@@ -1,3 +1,5 @@
+from typing import List
+
 from fastapi import FastAPI
 from pydantic import BaseModel
 from starlette.middleware.cors import CORSMiddleware
@@ -26,7 +28,7 @@ app.add_middleware(
 
 
 class Sentences(BaseModel):
-    sentences: list[str]
+    sentences: List[str]
 
 
 @app.post('/sentence-split')
