@@ -11,8 +11,9 @@ from sentencesplitter import split_sentences
 app = FastAPI()
 
 origins = [
-    'https://localhost',
-    'https://localhost:3000',
+    '*',
+    # 'https://localhost',
+    # 'https://localhost:3000',
 ]
 
 app.add_middleware(
