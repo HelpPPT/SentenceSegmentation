@@ -5,8 +5,12 @@ from kss import split_sentences as kss_split_sentences
 
 
 def split_sentences(sentences: List[str]) -> List[str]:
-    kss_split_result: List[List[str]] = kss_split_sentences(sentences)
-    return list(itertools.chain(*kss_split_result))
+    kss_split_result: List[str] | List[List[str]] = kss_split_sentences(sentences)
+
+    if type(kss_split_result[0]) == list:
+        return list(itertools.chain(*kss_split_result))
+
+    return kss_split_result
 
 
 if __name__ == '__main__':
