@@ -7,7 +7,7 @@ from sentencesplitter import split_sentences
 # pip install fastapi[all]
 
 # start dev server with `uvicorn main:app --reload`
-# start prod server with `uvicorn main:app --host 0.0.0.0 --port 80`
+# start prod server with `uvicorn --host 0.0.0.0 --port 8080 --workers 4 main:app`
 app = FastAPI()
 
 origins = [
